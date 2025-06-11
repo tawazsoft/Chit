@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mitchtin Foods - Sweet Potato & Groundnut Contract Farming</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(135deg, #8B4513, #CD853F);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo::before {
+            content: "🥔";
+            margin-right: 10px;
+            font-size: 2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+        }
+
+        .nav-links a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #DEB887 0%, #F4A460 50%, #CD853F 100%);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="crops" width="50" height="50" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="3" fill="%23ffffff" opacity="0.1"/><circle cx="10" cy="40" r="2" fill="%23ffffff" opacity="0.08"/></pattern></defs><rect width="100" height="100" fill="url(%23crops)"/></svg>') repeat;
+            animation: float 25s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-30px) rotate(3deg); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: #8B4513;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            color: #654321;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #8B4513, #A0522D);
+            color: white;
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+            background: linear-gradient(45deg, #A0522D, #8B4513);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 5rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #8B4513;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(45deg, #CD853F, #DEB887);
+            border-radius: 2px;
+        }
+
+        /* About Section */
+        .about {
+            background: #f8f9fa;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            margin-bottom: 4rem;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .about-image {
+            background: linear-gradient(45deg, #CD853F, #DEB887);
+            height: 400px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8rem;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        /* Profile Section */
+        .profile {
+            background: linear-gradient(135deg, #ffffff 0%, #f5f5dc 100%);
+        }
+
+        .profile-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .profile-image {
+            background: linear-gradient(45deg, #8B4513, #CD853F);
+            height: 300px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 6rem;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .profile-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        /* Services Section */
+        .services {
+            background: #f8f9fa;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .service-card:hover::before {
+            left: 100%;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .service-card h3 {
+            color: #8B4513;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        /* Contract Farming Section */
+        .contract-farming {
+            background: linear-gradient(135deg, #8B4513, #CD853F);
+            color: white;
+        }
+
+        .contract-farming .section-title {
+            color: white;
+        }
+
+        .contract-benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .benefit-item {
+            background: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .benefit-item:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-5px);
+        }
+
+        .benefit-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        /* Products Section */
+        .products {
+            background: linear-gradient(135deg, #ffffff 0%, #f0f8f0 100%);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+        }
+
+        .product-image {
+            height: 200px;
+            background: linear-gradient(45deg, #CD853F, #DEB887);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+        }
+
+        .product-content {
+            padding: 2rem;
+        }
+
+        .product-card h3 {
+            color: #8B4513;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, #654321, #8B4513);
+            color: white;
+        }
+
+        .contact .section-title {
+            color: white;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateX(10px);
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            padding: 1rem;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            box-shadow: 0 0 20px rgba(255,255,255,0.3);
+            transform: scale(1.02);
+        }
+
+        .submit-btn {
+            background: linear-gradient(45deg, #DEB887, #F4A460);
+            color: #654321;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        /* Footer */
+        footer {
+            background: #3d2817;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .nav-links.mobile {
+            position: fixed;
+            top: 70px;
+            left: -100%;
+            width: 100%;
+            height: calc(100vh - 70px);
+            background: linear-gradient(135deg, #8B4513, #CD853F);
+            flex-direction: column;
+            justify-content: start;
+            align-items: center;
+            padding-top: 2rem;
+            transition: left 0.3s ease;
+            z-index: 999;
+        }
+
+        .nav-links.mobile.active {
+            left: 0;
+        }
+
+        .nav-links.mobile a {
+            padding: 1rem;
+            font-size: 1.2rem;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            width: 90%;
+            text-align: center;
+        }
+
+        .whatsapp-btn {
+            background: #25D366;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .whatsapp-btn:hover {
+            background: #128C7E;
+            transform: translateY(-2px);
+        }
+
+        .contact-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero {
+                padding: 0 20px;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .about-content,
+            .contact-grid,
+            .profile-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .services-grid,
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contract-benefits {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .service-card,
+            .benefit-item {
+                padding: 1.5rem;
+            }
+
+            .contact-buttons {
+                flex-direction: column;
+            }
+
+            .about-image,
+            .profile-image {
+                height: 250px;
+                font-size: 4rem;
+            }
+
+            .product-image {
+                height: 150px;
+                font-size: 3rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .cta-button {
+                padding: 12px 30px;
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .service-card,
+            .benefit-item {
+                padding: 1rem;
+            }
+
+            .service-icon,
+            .benefit-icon {
+                font-size: 2.5rem;
+            }
+
+            .about-image,
+            .profile-image {
+                height: 200px;
+                font-size: 3rem;
+            }
+
+            .contract-benefits {
+                grid-template-columns: 1fr;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .product-card {
+                margin: 0 10px;
+            }
+        }
+
+        @media (max-width: 320px) {
+            .container {
+                padding: 0 10px;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .service-card h3,
+            .benefit-item h3 {
+                font-size: 1.2rem;
+            }
+        }
+
+        /* Scroll animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">Mitchtin Foods</div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Company</a></li>
+                <li><a href="#profile">Profile</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Mitchtin Foods</h1>
+            <p>Premium Sweet Potato & Groundnut Production Through Contract Farming</p>
+            <a href="#contact" class="cta-button">Partner With Us</a>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title fade-in">About Mitchtin Foods</h2>
+            <div class="about-content">
+                <div class="about-text fade-in">
+                    <p>Mitchtin Foods is a leading agricultural company specializing in sweet potato and groundnut production through innovative contract farming partnerships. We are committed to empowering farmers while ensuring consistent, high-quality crop production for the market.</p>
+                    <br>
+                    <p>Our business model is built on mutual benefit - we provide farmers with essential inputs including fertilizers, herbicides, and insecticides, while guaranteeing a ready market for their produce. This approach ensures sustainable income for farmers and reliable supply chains for our customers.</p>
+                    <br>
+                    <p>With years of experience in agricultural value chains, we understand the challenges faced by smallholder farmers and have developed comprehensive solutions that address these needs while maintaining the highest standards of quality and sustainability.</p>
+                </div>
+                <div class="about-image fade-in">🏢</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="profile" class="profile">
+        <div class="container">
+            <h2 class="section-title fade-in">Company Profile</h2>
+            <div class="profile-content">
+                <div class="profile-image fade-in">👤</div>
+                <div class="profile-text fade-in">
+                    <h3 style="color: #8B4513; margin-bottom: 1rem; font-size: 1.8rem;">Leadership & Vision</h3>
+                    <p>Mitchtin Foods was founded with a vision to revolutionize agricultural production through strategic partnerships with local farmers. Our leadership team brings extensive experience in agricultural management, supply chain optimization, and farmer relationship management.</p>
+                    <br>
+                    <p><strong>Core Values:</strong></p>
+                    <ul style="margin-left: 2rem; margin-top: 0.5rem;">
+                        <li>Farmer-first approach to business partnerships</li>
+                        <li>Quality assurance at every stage of production</li>
+                        <li>Sustainable agricultural practices</li>
+                        <li>Transparent and fair trade relationships</li>
+                        <li>Innovation in crop production techniques</li>
+                    </ul>
+                    <br>
+                    <p>Our commitment extends beyond business transactions - we build lasting relationships with farming communities, providing ongoing support, training, and market access that ensures mutual growth and prosperity.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title fade-in">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <span class="service-icon">📄</span>
+                    <h3>Contract Farming</h3>
+                    <p>Comprehensive farming contracts that provide security and guaranteed income for farmers while ensuring consistent supply for our operations.</p>
+                </div>
+                <div class="service-card fade-in">
+                    <span class="service-icon">🧪</span>
+                    <h3>Input Supply</h3>
+                    <p>We provide high-quality fertilizers, herbicides, and insecticides to ensure optimal crop health and maximum yield potential.</p>
+                </div>
+                <div class="service-card fade-in">
+                    <span class="service-icon">🏪</span>
+                    <h3>Guaranteed Market</h3>
+                    <p>Direct market access with pre-agreed pricing, eliminating the uncertainty of finding buyers and ensuring fair compensation.</p>
+                </div>
+                <div class="service-card fade-in">
+                    <span class="service-icon">🎓</span>
+                    <h3>Technical Support</h3>
+                    <p>Ongoing agricultural training and technical assistance to help farmers adopt best practices and improve productivity.</p>
+                </div>
+                <div class="service-card fade-in">
+                    <span class="service-icon">📊</span>
+                    <h3>Quality Assurance</h3>
+                    <p>Rigorous quality control measures throughout the production process to ensure premium grade products for our customers.</p>
+                </div>
+                <div class="service-card fade-in">
+                    <span class="service-icon">🚚</span>
+                    <h3>Logistics Support</h3>
+                    <p>Efficient collection and transportation systems to ensure timely harvest and delivery of produce from farm to market.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contract-farming" class="contract-farming">
+        <div class="container">
+            <h2 class="section-title fade-in">Contract Farming Benefits</h2>
+            <div class="contract-benefits">
+                <div class="benefit-item fade-in">
+                    <span class="benefit-icon">💰</span>
+                    <h3>Guaranteed Income</h3>
+                    <p>Secure, pre-agreed pricing that protects farmers from market volatility and ensures predictable income.</p>
+                </div>
+                <div class="benefit-item fade-in">
+                    <span class="benefit-icon">🌱</span>
+                    <h3>Quality Inputs</h3>
+                    <p>Access to premium fertilizers, herbicides, and insecticides at competitive rates to maximize crop potential.</p>
+                </div>
+                <div class="benefit-item fade-in">
+                    <span class="benefit-icon">🤝</span>
+                    <h3>Partnership Support</h3>
+                    <p>Ongoing relationship with dedicated support throughout the growing season and beyond.</p>
+                </div>
+                <div class="benefit-item fade-in">
+                    <span class="benefit-icon">📈</span>
+                    <h3>Capacity Building</h3>
+                    <p>Training and technical assistance to improve farming techniques and increase productivity.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="products" class="products">
+        <div class="container">
+            <h2 class="section-title fade-in">Our Products</h2>
+            <div class="products-grid">
+                <div class="product-card fade-in">
+                    <div class="product-image">🍠</div>
+                    <div class="product-content">
+                        <h3>Sweet Potatoes</h3>
+                        <p>Premium quality sweet potatoes grown under optimal conditions with careful attention to soil health, proper nutrition, and pest management. Our sweet potatoes are known for their excellent taste, nutritional value, and consistent quality.</p>
+                        <ul style="margin-top: 1rem; margin-left: 1.5rem;">
+                            <li>Multiple varieties available</li>
+                            <li>Organic and conventional options</li>
+                            <li>Consistent sizing and quality</li>
+                            <li>Year-round availability</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="product-card fade-in">
+                    <div class="product-image">🥜</div>
+                    <div class="product-content">
+                        <h3>Groundnuts</h3>
+                        <p>High-quality groundnuts (peanuts) produced through sustainable farming practices. Our groundnuts meet international standards for quality, safety, and nutritional content, making them ideal for both local and export markets.</p>
+                        <ul style="margin-top: 1rem; margin-left: 1.5rem;">
+                            <li>Premium grade nuts</li>
+                            <li>Excellent oil content</li>
+                            <li>Proper drying and storage</li>
+                            <li>Traceable production process</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title fade-in">Get In Touch</h2>
+            <div class="contact-grid">
+                <div class="contact-info fade-in">
+                    <div class="contact-item">
+                        <span style="font-size: 1.5rem;">📍</span>
+                        <div>
+                            <h4>Address</h4>
+                            <p>Mitchtin Foods Ltd.<br>Agricultural District<br>Bulawayo, Zimbabwe</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span style="font-size: 1.5rem;">📞</span>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+263 XXX XXXXX</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span style="font-size: 1.5rem;">✉️</span>
+                        <div>
+                            <h4>Email</h4>
+                            <p>info@mitchtinfoods.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span style="font-size: 1.5rem;">🕒</span>
+                        <div>
+                            <h4>Business Hours</h4>
+                            <p>Mon-Fri: 8:00 AM - 5:00 PM<br>Sat: 8:00 AM - 12:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form fade-in">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="interest">Interest Area</label>
+                        <select id="interest" name="interest" required>
+                            <option value="">Select your interest</option>
+                            <option value="contract-farming">Contract Farming Partnership</option>
+                            <option value="product-purchase">Product Purchase</option>
+                            <option value="input-supply">Input Supply Services</option>
+                            <option value="general-inquiry">General Inquiry</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+                    </div>
+                    <div class="contact-buttons">
+                        <button type="submit" class="submit-btn">Send Email</button>
+                        <!-- <button type="button" class="whatsapp-btn" id="whatsappBtn">
+                            📱 Send WhatsApp
+                        </button> -->
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Mitchtin Foods Ltd. All rights reserved. | Empowering farmers, nourishing communities.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu functionality
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('mobile');
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileMenuBtn.textContent = '☰';
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Header background change on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(139, 69, 19, 0.95)';
+            } else {
+                header.style.background = 'linear-gradient(135deg, #8B4513, #CD853F)';
+            }
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // WhatsApp functionality
+        const whatsappBtn = document.getElementById('whatsappBtn');
+        
+        function sendWhatsApp() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const interest = document.getElementById('interest').value;
+            const message = document.getElementById('message').value;
+            
+            if (!name || !email || !interest || !message) {
+                alert('Please fill in all required fields before sending WhatsApp message.');
+                return;
+            }
+            
+            const whatsappMessage = `Hello Mitchtin Foods!
+
+*New Inquiry Details:*
+📝 Name: ${name}
+📧 Email: ${email}
+📞 Phone: ${phone || 'Not provided'}
+🎯 Interest: ${interest}
+
+💬 Message:
+${message}
+
+Thank you!`;
+            
+            // Replace with your actual WhatsApp number (include country code without + sign)
+            const whatsappNumber = '263XXXXXXXXX'; // Update this with your actual number
+            const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+            
+            window.open(whatsappUrl, '_blank');
+        }
+
+        whatsappBtn.addEventListener('click', sendWhatsApp);
+
+        // Email form submission
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const phone = formData.get('phone');
+            const interest = formData.get('interest');
+            const message = formData.get('message');
+            
+            // Simple validation
+            if (name && email && interest && message) {
+                // Create email content
+                const emailSubject = `New Inquiry from ${name} - ${interest}`;
+                const emailBody = `Name: ${name}
+Email: ${email}
+Phone: ${phone || 'Not provided'}
+Interest Area: ${interest}
+
+Message:
+${message}`;
+                
+                // Create mailto link
+                const mailtoLink = `mailto:info@mitchtinfoods.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+                
+                // Simulate form submission
+                const submitBtn = this.querySelector('.submit-btn');
+                const originalText = submitBtn.textContent;
+                
+                submitBtn.textContent = 'Opening Email...';
+                submitBtn.disabled = true;
+                
+                // Open email client
+                window.location.href = mailtoLink;
+                
+                setTimeout(() => {
+                    submitBtn.textContent = 'Email Sent!';
+                    submitBtn.style.background = 'linear-gradient(45deg, #4CAF50, #8BC34A)';
+                    
+                    setTimeout(() => {
+                        submitBtn.textContent = originalText;
+                        submitBtn.disabled = false;
+                        submitBtn.style.background = '';
+                        this.reset();
+                    }, 3000);
+                }, 1000);
+            } else {
+                alert('Please fill in all required fields before submitting.');
+            }
+        });
+
+        // Add floating crop elements
+        function createFloatingElement() {
+            const elements = ['🍠', '🥜', '🌱', '🌾'];
+            const element = document.createElement('div');
+            element.innerHTML = elements[Math.floor(Math.random() * elements.length)];
+            element.style.position = 'absolute';
+            element.style.fontSize = Math.random() * 25 + 15 + 'px';
+            element.style.opacity = '0.3';
+            element.style.left = Math.random() * 100 + '%';
+            element.style.top = '100%';
+            element.style.animation = `floatUp ${Math.random() * 8 + 12}s linear infinite`;
+            element.style.pointerEvents = 'none';
+            element.style.zIndex = '1';
+            
+            document.querySelector('.hero').appendChild(element);
+            
+            setTimeout(() => {
+                element.remove();
+            }, 20000);
+        }
+
+        // Add floating elements periodically
+        setInterval(createFloatingElement, 4000);
+
+        // Handle window resize for mobile menu
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                navLinks.classList.remove('mobile', 'active');
+                mobileMenuBtn.textContent = '☰';
+            }
+        });
+
+        // CSS for floating animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes floatUp {
+                0% {
+                    transform: translateY(0) rotate(0deg);
+                    opacity: 0.3;
+                }
+                50% {
+                    opacity: 0.6;
+                }
+                100% {
+                    transform: translateY(-100vh) rotate(360deg);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
