@@ -19,7 +19,7 @@
 
         /* Header & Navigation */
         header {
-            background: linear-gradient(135deg, #8B4513, #CD853F);
+            background: linear-gradient(135deg, #268c43, #268c43);
             color: white;
             padding: 1rem 0;
             position: fixed;
@@ -43,10 +43,11 @@
             align-items: center;
         }
 
-        .logo::before {
-            content: "🥔";
-            margin-right: 10px;
-            font-size: 2rem;
+        .logo img {
+           height: 70px;
+           width: auto;
+           border-radius: 100%;
+            
         }
 
         .nav-links {
@@ -70,7 +71,11 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #DEB887 0%, #F4A460 50%, #CD853F 100%);
+             background: linear-gradient(135deg, #1f1c18 0%, #131211 50%, #1a1715 100%); 
+            background-image: url(./images/navi-singh-b-0-LM0wzWM-unsplash.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
             height: 100vh;
             display: flex;
             align-items: center;
@@ -117,20 +122,20 @@
         .hero h1 {
             font-size: 3.5rem;
             margin-bottom: 1rem;
-            color: #8B4513;
+            color: #ffffff;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
         }
 
         .hero p {
             font-size: 1.3rem;
             margin-bottom: 2rem;
-            color: #654321;
+            color: #fff;
         }
 
         .cta-button {
             display: inline-block;
-            background: linear-gradient(45deg, #8B4513, #A0522D);
-            color: white;
+            background: linear-gradient(45deg, #fff, #f8f9fa);
+            color: black;
             padding: 15px 40px;
             text-decoration: none;
             border-radius: 50px;
@@ -155,7 +160,7 @@
             text-align: center;
             font-size: 2.5rem;
             margin-bottom: 3rem;
-            color: #8B4513;
+            color: #145828FF;
             position: relative;
         }
 
@@ -167,7 +172,7 @@
             transform: translateX(-50%);
             width: 80px;
             height: 4px;
-            background: linear-gradient(45deg, #CD853F, #DEB887);
+            background: linear-gradient(45deg, #268c43, #268c43);
             border-radius: 2px;
         }
 
@@ -189,9 +194,10 @@
             line-height: 1.8;
         }
 
-        .about-image {
+        .about-image img {
             background: linear-gradient(45deg, #CD853F, #DEB887);
-            height: 400px;
+            height: 500px;
+            width: 100%;
             border-radius: 20px;
             display: flex;
             align-items: center;
@@ -213,9 +219,9 @@
             align-items: center;
         }
 
-        .profile-image {
-            background: linear-gradient(45deg, #8B4513, #CD853F);
-            height: 300px;
+        .profile-image  img{
+            background: linear-gradient(45deg, #268c43, #268c43);
+            height: 400px;
             border-radius: 20px;
             display: flex;
             align-items: center;
@@ -280,14 +286,14 @@
         }
 
         .service-card h3 {
-            color: #8B4513;
+            color:  #268c43;
             margin-bottom: 1rem;
             font-size: 1.5rem;
         }
 
         /* Contract Farming Section */
         .contract-farming {
-            background: linear-gradient(135deg, #8B4513, #CD853F);
+            background: linear-gradient(135deg, #268c43, #268c43);
             color: white;
         }
 
@@ -328,7 +334,7 @@
 
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 3rem;
             margin-top: 3rem;
         }
@@ -346,8 +352,9 @@
             box-shadow: 0 20px 50px rgba(0,0,0,0.15);
         }
 
-        .product-image {
+        .product-image img {
             height: 200px;
+            width: 100%;
             background: linear-gradient(45deg, #CD853F, #DEB887);
             display: flex;
             align-items: center;
@@ -356,18 +363,18 @@
         }
 
         .product-content {
-            padding: 2rem;
+            padding: 1rem;
         }
 
         .product-card h3 {
-            color: #8B4513;
+            color: #268c43, #268c43;
             margin-bottom: 1rem;
             font-size: 1.5rem;
         }
 
         /* Contact Section */
         .contact {
-            background: linear-gradient(135deg, #654321, #8B4513);
+            background: linear-gradient(135deg, #268c43, #268c43);
             color: white;
         }
 
@@ -383,6 +390,7 @@
         }
 
         .contact-info {
+            margin-top: 33px;
             display: flex;
             flex-direction: column;
             gap: 1.5rem;
@@ -438,8 +446,8 @@
         }
 
         .submit-btn {
-            background: linear-gradient(45deg, #DEB887, #F4A460);
-            color: #654321;
+            background: linear-gradient(45deg, #fff, #fff);
+            color: #268c43, #268c43;
             padding: 1rem 2rem;
             border: none;
             border-radius: 50px;
