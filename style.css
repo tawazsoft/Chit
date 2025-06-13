@@ -600,7 +600,7 @@
             }
 
             .about-image,
-            .profile-image {
+            .profile-image img {
                 height: 250px;
                 font-size: 4rem;
             }
@@ -640,7 +640,7 @@
             }
 
             .about-image,
-            .profile-image {
+            .profile-image img{
                 height: 200px;
                 font-size: 3rem;
             }
