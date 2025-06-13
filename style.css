@@ -603,7 +603,11 @@
             .profile-image  {
                 height: 250px;
                 font-size: 4rem;
+                margin: 0 auto;
             }
+                .about-image img{
+                height: 390px;
+             }
 
             .product-image  {
                 height: 150px;
