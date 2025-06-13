@@ -639,23 +639,17 @@
                 font-size: 2.5rem;
             }
 
-            
-            .profile-image{
+            .about-image,
+            .profile-image img{
                 height: 200px;
                 font-size: 3rem;
+                margin: 0 auto;
             }
-            .about-image img {
-            background: linear-gradient(45deg, #CD853F, #DEB887);
-            height: 300px;
-            width: 100%;
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 8rem;
-            color: white;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
+
+             .about-image img{
+                height: 390px;
+             }
+            
 
             .contract-benefits {
                 grid-template-columns: 1fr;
