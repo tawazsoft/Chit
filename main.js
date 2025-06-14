@@ -477,7 +477,7 @@ function createNotification(message, type, icon) {
 
 // Add floating crop elements
 function createFloatingElement() {
-    const elements = ['', '🥜', '🌱', '🌾', ''];
+    // const elements = ['', '🥜', '🌱', '🌾', ''];
     const element = document.createElement('div');
     element.innerHTML = elements[Math.floor(Math.random() * elements.length)];
     element.style.position = 'absolute';
